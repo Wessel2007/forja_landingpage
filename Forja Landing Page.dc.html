@@ -19,11 +19,11 @@ a{color:#FF6B2B;text-decoration:none}
 a:hover{color:#FFC46B}
 ::selection{background:#FF6B2B;color:#0D0B09}
 input::placeholder{color:rgba(244,239,233,.4)}
-@keyframes forja-pulse{0%,100%{opacity:.5}50%{opacity:1}}
-@keyframes forja-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes forja-shimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
-@keyframes forja-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes forja-spark{0%{transform:translate(0,0);opacity:0}15%{opacity:1}85%{opacity:.5}100%{transform:translate(var(--drift,10px),-170px);opacity:0}}
+@keyframes fornalha-pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes fornalha-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes fornalha-shimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
+@keyframes fornalha-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes fornalha-spark{0%{transform:translate(0,0);opacity:0}15%{opacity:1}85%{opacity:.5}100%{transform:translate(var(--drift,10px),-170px);opacity:0}}
 </style>
 </helmet>
 
@@ -31,8 +31,8 @@ input::placeholder{color:rgba(244,239,233,.4)}
 
 <nav style="{{ navStyle }}">
 <div style="display:flex;align-items:center;gap:10px;">
-<img src="uploads/logo_oficial.png" alt="Forja" style="width:32px;height:32px;border-radius:8px;display:block;object-fit:cover;">
-<span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:.04em;">FORJA</span>
+<img src="uploads/logo_oficial.png" alt="Fornalha" style="width:32px;height:32px;border-radius:8px;display:block;object-fit:cover;">
+<span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:.04em;">FORNALHA</span>
 </div>
 <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
 <a href="#sistema" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Sistema</a>
@@ -45,26 +45,26 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </nav>
 
 <section id="hero" style="position:relative;padding:clamp(56px,9vw,110px) clamp(20px,5vw,64px) clamp(80px,10vw,130px);">
-<div style="position:absolute;top:10%;right:8%;width:420px;height:420px;background:radial-gradient(circle,rgba(255,107,43,.16),transparent 70%);filter:blur(10px);pointer-events:none;animation:forja-pulse 4s ease-in-out infinite;"></div>
+<div style="position:absolute;top:10%;right:8%;width:420px;height:420px;background:radial-gradient(circle,rgba(255,107,43,.16),transparent 70%);filter:blur(10px);pointer-events:none;animation:fornalha-pulse 4s ease-in-out infinite;"></div>
 <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
-<span style="position:absolute;left:6%;bottom:6%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:forja-spark 4.2s ease-in infinite;animation-delay:.1s;--drift:10px;"></span>
-<span style="position:absolute;left:14%;bottom:3%;width:5px;height:5px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 10px 3px rgba(255,107,43,.7);animation:forja-spark 5s ease-in infinite;animation-delay:1.1s;--drift:-14px;"></span>
-<span style="position:absolute;left:23%;bottom:11%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:forja-spark 4.6s ease-in infinite;animation-delay:2s;--drift:8px;"></span>
-<span style="position:absolute;left:32%;bottom:2%;width:4px;height:4px;border-radius:50%;background:#E8B458;box-shadow:0 0 9px 2px rgba(232,180,88,.7);animation:forja-spark 5.4s ease-in infinite;animation-delay:.6s;--drift:-10px;"></span>
-<span style="position:absolute;left:44%;bottom:8%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:forja-spark 4.8s ease-in infinite;animation-delay:2.4s;--drift:12px;"></span>
-<span style="position:absolute;left:56%;bottom:4%;width:4px;height:4px;border-radius:50%;background:#FFC46B;box-shadow:0 0 9px 2px rgba(255,196,107,.7);animation:forja-spark 5.2s ease-in infinite;animation-delay:1.6s;--drift:-8px;"></span>
-<span style="position:absolute;left:66%;bottom:10%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:forja-spark 4.4s ease-in infinite;animation-delay:.3s;--drift:14px;"></span>
-<span style="position:absolute;left:76%;bottom:5%;width:5px;height:5px;border-radius:50%;background:#E8B458;box-shadow:0 0 10px 3px rgba(232,180,88,.7);animation:forja-spark 5.6s ease-in infinite;animation-delay:2.8s;--drift:-12px;"></span>
-<span style="position:absolute;left:86%;bottom:9%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:forja-spark 4.9s ease-in infinite;animation-delay:1.3s;--drift:10px;"></span>
-<span style="position:absolute;left:94%;bottom:3%;width:4px;height:4px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 9px 2px rgba(255,107,43,.7);animation:forja-spark 5.1s ease-in infinite;animation-delay:.9s;--drift:-9px;"></span>
+<span style="position:absolute;left:6%;bottom:6%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:fornalha-spark 4.2s ease-in infinite;animation-delay:.1s;--drift:10px;"></span>
+<span style="position:absolute;left:14%;bottom:3%;width:5px;height:5px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 10px 3px rgba(255,107,43,.7);animation:fornalha-spark 5s ease-in infinite;animation-delay:1.1s;--drift:-14px;"></span>
+<span style="position:absolute;left:23%;bottom:11%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:fornalha-spark 4.6s ease-in infinite;animation-delay:2s;--drift:8px;"></span>
+<span style="position:absolute;left:32%;bottom:2%;width:4px;height:4px;border-radius:50%;background:#E8B458;box-shadow:0 0 9px 2px rgba(232,180,88,.7);animation:fornalha-spark 5.4s ease-in infinite;animation-delay:.6s;--drift:-10px;"></span>
+<span style="position:absolute;left:44%;bottom:8%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:fornalha-spark 4.8s ease-in infinite;animation-delay:2.4s;--drift:12px;"></span>
+<span style="position:absolute;left:56%;bottom:4%;width:4px;height:4px;border-radius:50%;background:#FFC46B;box-shadow:0 0 9px 2px rgba(255,196,107,.7);animation:fornalha-spark 5.2s ease-in infinite;animation-delay:1.6s;--drift:-8px;"></span>
+<span style="position:absolute;left:66%;bottom:10%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:fornalha-spark 4.4s ease-in infinite;animation-delay:.3s;--drift:14px;"></span>
+<span style="position:absolute;left:76%;bottom:5%;width:5px;height:5px;border-radius:50%;background:#E8B458;box-shadow:0 0 10px 3px rgba(232,180,88,.7);animation:fornalha-spark 5.6s ease-in infinite;animation-delay:2.8s;--drift:-12px;"></span>
+<span style="position:absolute;left:86%;bottom:9%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:fornalha-spark 4.9s ease-in infinite;animation-delay:1.3s;--drift:10px;"></span>
+<span style="position:absolute;left:94%;bottom:3%;width:4px;height:4px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 9px 2px rgba(255,107,43,.7);animation:fornalha-spark 5.1s ease-in infinite;animation-delay:.9s;--drift:-9px;"></span>
 </div>
 <div ref="{{ heroRef }}" style="{{ heroReveal }}">
 <div style="flex:1 1 460px;min-width:300px;">
 <div style="display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>Disciplina. Não culpa.</div>
 <h1 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(36px,5.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0 0 22px;text-wrap:pretty;">Você está prestes a forjar uma nova versão de si.</h1>
-<p style="font-size:clamp(16px,1.6vw,18px);line-height:1.6;color:rgba(244,239,233,.7);max-width:520px;margin:0 0 34px;">Forja transforma o combate diário contra seus impulsos em têmpera real — golpe a golpe, com patentes que nunca regridem, mesmo depois de uma recaída.</p>
+<p style="font-size:clamp(16px,1.6vw,18px);line-height:1.6;color:rgba(244,239,233,.7);max-width:520px;margin:0 0 34px;">Fornalha transforma o combate diário contra seus impulsos em têmpera real — golpe a golpe, com patentes que nunca regridem, mesmo depois de uma recaída.</p>
 <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:22px;">
-<a href="#alistamento" style="background:linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B);color:#211505;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;padding:16px 32px;border-radius:999px;box-shadow:0 12px 30px -10px rgba(255,107,43,.5);transition:transform .25s ease,box-shadow .25s ease;display:inline-block;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 18px 40px -12px rgba(255,107,43,.65);" style-active="transform:scale(.97);">Aliste-se na Forja</a>
+<a href="#alistamento" style="background:linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B);color:#211505;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;padding:16px 32px;border-radius:999px;box-shadow:0 12px 30px -10px rgba(255,107,43,.5);transition:transform .25s ease,box-shadow .25s ease;display:inline-block;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 18px 40px -12px rgba(255,107,43,.65);" style-active="transform:scale(.97);">Aliste-se na Fornalha</a>
 <a href="#sistema" style="border:1px solid rgba(255,255,255,.16);color:#F4EFE9;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;padding:16px 30px;border-radius:999px;transition:border-color .25s ease,transform .25s ease;display:inline-block;" style-hover="border-color:rgba(255,255,255,.4);transform:translateY(-3px);" style-active="transform:scale(.97);">Ver como funciona</a>
 </div>
 <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:rgba(244,239,233,.4);font-family:'Space Grotesk',sans-serif;letter-spacing:.02em;">
@@ -72,9 +72,9 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </div>
 </div>
 <div style="flex:0 0 auto;margin:0 auto;">
-<div style="width:min(280px,72vw);background:#1c1712;border-radius:48px;padding:14px;box-shadow:0 40px 90px -24px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.05);animation:forja-float 6s ease-in-out infinite;">
+<div style="width:min(280px,72vw);background:#1c1712;border-radius:48px;padding:14px;box-shadow:0 40px 90px -24px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.05);animation:fornalha-float 6s ease-in-out infinite;">
 <div style="position:relative;border-radius:36px;overflow:hidden;background:#000;">
-<img src="uploads/IMG_4554.PNG" alt="Painel diário do app Forja" style="width:100%;display:block;">
+<img src="uploads/IMG_4554.PNG" alt="Painel diário do app Fornalha" style="width:100%;display:block;">
 <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:90px;height:24px;background:#000;border-radius:14px;"></div>
 </div>
 </div>
@@ -87,7 +87,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>O ciclo</div>
 <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0 0 24px;text-wrap:pretty;">Força de vontade, sozinha, sempre quebra no mesmo lugar.</h2>
 <p style="font-size:17px;line-height:1.7;color:rgba(244,239,233,.6);margin:0 0 28px;">Impulso. Recaída. Culpa. Reinício. Ferro batido sem ordem só racha — e é assim que a maioria dos apps de hábito trata você: contam dias, e quando você recai, o contador zera como se a bigorna nunca tivesse recebido um golpe. Isso não é falta de caráter. É um sistema mal desenhado.</p>
-<p style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,26px);color:#F4EFE9;margin:0;">A Forja separa as duas coisas.</p>
+<p style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,26px);color:#F4EFE9;margin:0;">A Fornalha separa as duas coisas.</p>
 </div>
 </section>
 
@@ -167,12 +167,12 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <div style="display:flex;gap:clamp(32px,6vw,80px);flex-wrap:wrap;align-items:center;">
 <div style="flex:1 1 420px;min-width:300px;">
 <div style="display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>Feito para o seu gatilho</div>
-<h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0 0 22px;text-wrap:pretty;">Duas pessoas nunca enfrentam a mesma forja.</h2>
+<h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0 0 22px;text-wrap:pretty;">Duas pessoas nunca enfrentam a mesma fornalha.</h2>
 <p style="font-size:16px;line-height:1.7;color:rgba(244,239,233,.6);margin:0 0 24px;max-width:460px;">O onboarding mapeia seu comportamento, seus gatilhos e o motivo que te trouxe até aqui. A partir disso, o app inteiro se adapta a você.</p>
 <div style="display:flex;flex-direction:column;gap:14px;">
 <div style="display:flex;gap:10px;align-items:flex-start;">
 <ion-icon name="checkmark-circle-outline" style="font-size:18px;color:#58C286;flex:0 0 auto;margin-top:2px;"></ion-icon>
-<span style="font-size:14.5px;line-height:1.55;color:rgba(244,239,233,.75);">Você escolhe seus gatilhos — a Forja aprende quais te derrubam mais.</span>
+<span style="font-size:14.5px;line-height:1.55;color:rgba(244,239,233,.75);">Você escolhe seus gatilhos — a Fornalha aprende quais te derrubam mais.</span>
 </div>
 <div style="display:flex;gap:10px;align-items:flex-start;">
 <ion-icon name="checkmark-circle-outline" style="font-size:18px;color:#58C286;flex:0 0 auto;margin-top:2px;"></ion-icon>
@@ -185,12 +185,12 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </div>
 </div>
 <div style="flex:1 1 320px;display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap;">
-<div style="width:170px;flex:0 0 170px;background:#1c1712;border-radius:34px;padding:10px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05);transform:rotate(-5deg);animation:forja-float 5.6s ease-in-out infinite;">
+<div style="width:170px;flex:0 0 170px;background:#1c1712;border-radius:34px;padding:10px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05);transform:rotate(-5deg);animation:fornalha-float 5.6s ease-in-out infinite;">
 <div style="position:relative;border-radius:24px;overflow:hidden;background:#000;">
 <img src="uploads/IMG_4565.PNG" alt="Registro de gatilho personalizado" style="width:100%;display:block;">
 </div>
 </div>
-<div style="width:170px;flex:0 0 170px;background:#1c1712;border-radius:34px;padding:10px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05);transform:rotate(4deg);animation:forja-float 6.2s ease-in-out infinite;animation-delay:.6s;">
+<div style="width:170px;flex:0 0 170px;background:#1c1712;border-radius:34px;padding:10px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05);transform:rotate(4deg);animation:fornalha-float 6.2s ease-in-out infinite;animation-delay:.6s;">
 <div style="position:relative;border-radius:24px;overflow:hidden;background:#000;">
 <img src="uploads/IMG_4559.PNG" alt="Horário de risco personalizado na Home" style="width:100%;display:block;">
 </div>
@@ -209,7 +209,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <p style="font-size:16px;line-height:1.7;color:rgba(244,239,233,.6);margin:0;max-width:460px;">Cada patente marca uma têmpera diferente do seu autocontrole — do primeiro corte na rotina antiga até a disciplina que já não pede esforço consciente. Cada dia é mais uma martelada moldando o seu aço.</p>
 </div>
 <div style="flex:0 0 auto;margin:0 auto;">
-<div style="width:min(240px,64vw);background:#1c1712;border-radius:42px;padding:12px;box-shadow:0 40px 90px -24px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.05);animation:forja-float 6.5s ease-in-out infinite;">
+<div style="width:min(240px,64vw);background:#1c1712;border-radius:42px;padding:12px;box-shadow:0 40px 90px -24px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.05);animation:fornalha-float 6.5s ease-in-out infinite;">
 <div style="position:relative;border-radius:32px;overflow:hidden;background:#000;">
 <img src="uploads/IMG_4561.PNG" alt="Detalhe de patente com narrativa de progressão" style="width:100%;display:block;">
 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:78px;height:22px;background:#000;border-radius:12px;"></div>
@@ -218,8 +218,8 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </div>
 </div>
 <div style="position:relative;padding:32px 0 12px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);">
-<div style="position:absolute;left:0;right:0;top:56px;height:2px;background:linear-gradient(90deg,#C9330B,#FF6B2B,#FFC46B,#FF6B2B,#C9330B);background-size:200% 100%;opacity:.5;animation:forja-shimmer 5s linear infinite;"></div>
-<div style="display:flex;gap:0;width:max-content;padding-bottom:16px;animation:forja-marquee 36s linear infinite;" style-hover="animation-play-state:paused;">
+<div style="position:absolute;left:0;right:0;top:56px;height:2px;background:linear-gradient(90deg,#C9330B,#FF6B2B,#FFC46B,#FF6B2B,#C9330B);background-size:200% 100%;opacity:.5;animation:fornalha-shimmer 5s linear infinite;"></div>
+<div style="display:flex;gap:0;width:max-content;padding-bottom:16px;animation:fornalha-marquee 36s linear infinite;" style-hover="animation-play-state:paused;">
 <sc-for list="{{ ranks }}" as="rank" hint-placeholder-count="9">
 <div style="flex:0 0 auto;width:140px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;">
 <img src="{{ rank.img }}" alt="{{ rank.name }}" style="width:80px;height:80px;object-fit:contain;margin-bottom:14px;position:relative;z-index:1;transition:transform .3s ease;" style-hover="transform:scale(1.12);">
@@ -271,7 +271,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <section id="depoimentos" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);">
 <div ref="{{ depoimentosRef }}" style="{{ depoimentosReveal }}">
 <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-<div style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>Quem já está na forja</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>Quem já está na fornalha</div>
 <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0;text-wrap:pretty;">Acesso antecipado. Resultados que já aparecem.</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
@@ -292,20 +292,20 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <div ref="{{ planosRef }}" style="{{ planosReveal }}">
 <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
 <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="hammer-outline" style="font-size:15px;color:#FF6B2B;"></ion-icon>Planos</div>
-<h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0 0 18px;text-wrap:pretty;">Comece a forja de graça. Vá até o fim com o PRO.</h2>
+<h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0 0 18px;text-wrap:pretty;">Comece a fornalha de graça. Vá até o fim com o PRO.</h2>
 <p style="font-size:16px;line-height:1.6;color:rgba(244,239,233,.55);margin:0;">Sem pegadinha: o essencial é grátis para sempre. O PRO existe para quem quer ir além da primeira patente.</p>
 </div>
 <div style="display:flex;justify-content:center;margin-bottom:48px;">
 <div style="width:200px;background:#1c1712;border-radius:38px;padding:11px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05);">
 <div style="position:relative;border-radius:28px;overflow:hidden;background:#000;">
-<img src="uploads/IMG_4562.PNG" alt="Perfil com FORJA PRO ativo" style="width:100%;display:block;">
+<img src="uploads/IMG_4562.PNG" alt="Perfil com FORNALHA PRO ativo" style="width:100%;display:block;">
 </div>
 </div>
 </div>
 <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:stretch;">
 
 <div style="flex:1 1 380px;max-width:440px;background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;display:flex;flex-direction:column;">
-<div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,233,.4);margin-bottom:14px;">Forja</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,233,.4);margin-bottom:14px;">Fornalha</div>
 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;">
 <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;color:#F4EFE9;">R$ 0</span>
 </div>
@@ -325,7 +325,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C9330B,#FF6B2B,#FFC46B);"></div>
 <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,180,88,.16),transparent 70%);"></div>
 <div style="position:absolute;top:20px;right:20px;background:linear-gradient(135deg,#FFC46B,#E8B458);color:#211505;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;">Mais escolhido</div>
-<div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:14px;position:relative;">Forja PRO</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:14px;position:relative;">Fornalha PRO</div>
 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;position:relative;">
 <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;color:#F4EFE9;">R$ 12,90</span>
 </div>
@@ -349,17 +349,17 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <section id="alistamento" style="position:relative;background:#0A0807;padding:clamp(72px,10vw,140px) clamp(20px,5vw,64px);border-top:1px solid rgba(255,255,255,.05);overflow:hidden;">
 <div style="position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(255,107,43,.14),transparent 70%);pointer-events:none;"></div>
 <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
-<span style="position:absolute;left:10%;bottom:10%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:forja-spark 4.3s ease-in infinite;animation-delay:.4s;--drift:12px;"></span>
-<span style="position:absolute;left:22%;bottom:5%;width:4px;height:4px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 9px 2px rgba(255,107,43,.7);animation:forja-spark 5.3s ease-in infinite;animation-delay:1.5s;--drift:-10px;"></span>
-<span style="position:absolute;left:38%;bottom:14%;width:3px;height:3px;border-radius:50%;background:#E8B458;box-shadow:0 0 8px 2px rgba(232,180,88,.7);animation:forja-spark 4.9s ease-in infinite;animation-delay:2.2s;--drift:9px;"></span>
-<span style="position:absolute;left:52%;bottom:6%;width:5px;height:5px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 10px 3px rgba(255,107,43,.75);animation:forja-spark 5.6s ease-in infinite;animation-delay:.8s;--drift:-13px;"></span>
-<span style="position:absolute;left:66%;bottom:12%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:forja-spark 4.6s ease-in infinite;animation-delay:2.6s;--drift:11px;"></span>
-<span style="position:absolute;left:80%;bottom:7%;width:4px;height:4px;border-radius:50%;background:#E8B458;box-shadow:0 0 9px 2px rgba(232,180,88,.7);animation:forja-spark 5.1s ease-in infinite;animation-delay:1.1s;--drift:-8px;"></span>
-<span style="position:absolute;left:90%;bottom:11%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:forja-spark 4.8s ease-in infinite;animation-delay:.2s;--drift:10px;"></span>
+<span style="position:absolute;left:10%;bottom:10%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:fornalha-spark 4.3s ease-in infinite;animation-delay:.4s;--drift:12px;"></span>
+<span style="position:absolute;left:22%;bottom:5%;width:4px;height:4px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 9px 2px rgba(255,107,43,.7);animation:fornalha-spark 5.3s ease-in infinite;animation-delay:1.5s;--drift:-10px;"></span>
+<span style="position:absolute;left:38%;bottom:14%;width:3px;height:3px;border-radius:50%;background:#E8B458;box-shadow:0 0 8px 2px rgba(232,180,88,.7);animation:fornalha-spark 4.9s ease-in infinite;animation-delay:2.2s;--drift:9px;"></span>
+<span style="position:absolute;left:52%;bottom:6%;width:5px;height:5px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 10px 3px rgba(255,107,43,.75);animation:fornalha-spark 5.6s ease-in infinite;animation-delay:.8s;--drift:-13px;"></span>
+<span style="position:absolute;left:66%;bottom:12%;width:3px;height:3px;border-radius:50%;background:#FFC46B;box-shadow:0 0 8px 2px rgba(255,196,107,.75);animation:fornalha-spark 4.6s ease-in infinite;animation-delay:2.6s;--drift:11px;"></span>
+<span style="position:absolute;left:80%;bottom:7%;width:4px;height:4px;border-radius:50%;background:#E8B458;box-shadow:0 0 9px 2px rgba(232,180,88,.7);animation:fornalha-spark 5.1s ease-in infinite;animation-delay:1.1s;--drift:-8px;"></span>
+<span style="position:absolute;left:90%;bottom:11%;width:3px;height:3px;border-radius:50%;background:#FF6B2B;box-shadow:0 0 8px 2px rgba(255,107,43,.75);animation:fornalha-spark 4.8s ease-in infinite;animation-delay:.2s;--drift:10px;"></span>
 </div>
 <div ref="{{ alistamentoRef }}" style="{{ alistamentoReveal }}">
 <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="hammer-outline" style="font-size:15px;color:#FF6B2B;"></ion-icon>O aço não esfria sozinho</div>
-<h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.1;margin:0 0 20px;text-wrap:pretty;">A forja está pronta. Falta alistar você.</h2>
+<h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.1;margin:0 0 20px;text-wrap:pretty;">A fornalha está pronta. Falta alistar você.</h2>
 <p style="font-size:16.5px;line-height:1.65;color:rgba(244,239,233,.6);margin:0 0 36px;">Entre para a lista de fundadores e seja avisado no exato momento em que o app abrir para download.</p>
 
 <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
@@ -390,14 +390,14 @@ input::placeholder{color:rgba(244,239,233,.4)}
 
 <footer style="padding:44px clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);">
 <div style="display:flex;align-items:center;gap:10px;">
-<img src="uploads/logo_oficial.png" alt="Forja" style="width:24px;height:24px;border-radius:6px;object-fit:cover;">
-<span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;">FORJA</span>
-<span style="color:rgba(244,239,233,.3);font-size:13px;margin-left:6px;">Disciplina forjada, dia após dia.</span>
+<img src="uploads/logo_oficial.png" alt="Fornalha" style="width:24px;height:24px;border-radius:6px;object-fit:cover;">
+<span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;">FORNALHA</span>
+<span style="color:rgba(244,239,233,.3);font-size:13px;margin-left:6px;">Forge autocontrole.</span>
 </div>
 <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
 <a href="Politica de Privacidade.dc.html" style="font-size:13px;color:rgba(244,239,233,.5);">Privacidade</a>
 <a href="Termos de Uso.dc.html" style="font-size:13px;color:rgba(244,239,233,.5);">Termos</a>
-<span style="font-size:13px;color:rgba(244,239,233,.3);">© 2026 Forja</span>
+<span style="font-size:13px;color:rgba(244,239,233,.3);">© 2026 Fornalha</span>
 </div>
 </footer>
 
@@ -551,7 +551,7 @@ class Component extends DCLogic {
       features: [
         { icon: 'alert-circle-outline', color: '#E5484D', title: 'Botão de Emergência', desc: 'No momento do impulso, um toque leva você a respiração guiada, identificação do gatilho e uma ação imediata para virar o jogo.' },
         { icon: 'journal-outline', color: '#FF6B2B', title: 'Diário de Batalhas', desc: 'Registre cada enfrentamento — gatilho, contexto, resultado — e enxergue os padrões que ninguém mais te mostrou.' },
-        { icon: 'stats-chart-outline', color: '#FF6B2B', title: 'Painel Diário', desc: 'Dias na forja, tempo sem recair e economia acumulada, tudo num único painel.' },
+        { icon: 'stats-chart-outline', color: '#FF6B2B', title: 'Painel Diário', desc: 'Dias na fornalha, tempo sem recair e economia acumulada, tudo num único painel.' },
         { icon: 'shield-outline', color: '#E8B458', title: 'Patentes & Conquistas', desc: 'Uma trilha de progressão do Recruta ao Imortal — sua disciplina ganha forma visível.' },
         { icon: 'flame-outline', color: '#FFC46B', title: 'Frase do Dia', desc: 'Doutrina diária de disciplina, direto de mentes que dominaram o próprio impulso.' }
       ],

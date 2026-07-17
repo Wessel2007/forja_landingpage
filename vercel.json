@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Forja%20Landing%20Page.dc.html" }
+  ]
+}
