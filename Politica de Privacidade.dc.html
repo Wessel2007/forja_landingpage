@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0D0B09;}
+a{color:#FF7A36;text-decoration:none}
+a:hover{color:#FFC46B}
+</style>
+</helmet>
+
+<div style="background:#0D0B09;color:#F4EFE9;font-family:'Manrope',sans-serif;min-height:100vh;">
+<nav style="position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(13,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07);">
+<a href="Forja Landing Page.dc.html" style="font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:.04em;color:#E8B458;font-size:15px;">FORJA</a>
+<a href="Forja Landing Page.dc.html" style="font-size:13px;color:rgba(244,239,233,.55);font-weight:600;">← Voltar</a>
+</nav>
+<main style="max-width:680px;margin:0 auto;padding:40px 20px 80px;">
+<h1 style="font-family:'Archivo',sans-serif;color:#E8B458;font-size:26px;margin:0 0 4px;">Política de Privacidade</h1>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;"><strong style="color:#F4EFE9;">Última atualização:</strong> 16 de julho de 2026</p>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Esta Política de Privacidade descreve como o aplicativo Forja ("Aplicativo"), desenvolvido por Luiz Henrique Wessel ("nós", "nosso"), trata os dados relacionados ao seu uso. Tema sensível e público vulnerável exigem transparência total — leia com atenção.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">1. Resumo em uma frase</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">O Forja funciona 100% no seu aparelho: não existe servidor, conta de usuário ou sincronização em nuvem nesta versão. Nenhum dado que você registra sai do seu dispositivo.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">2. Quais dados coletamos</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">O Aplicativo armazena localmente, apenas no seu dispositivo:</p>
+<ul style="margin:0 0 12px;padding-left:20px;color:rgba(244,239,233,.78);font-size:15px;">
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Progresso:</strong> streak atual, XP, patente, histórico de eventos (recaídas, dias resistidos).</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Diário de Gatilhos:</strong> data, gatilho selecionado e texto opcional que você escrever — pode conter <strong style="color:#F4EFE9;">dados sensíveis</strong> sobre saúde mental e comportamento, nos termos da LGPD (Lei nº 13.709/2018).</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Perfil de personalização do onboarding:</strong> comportamento que deseja mudar, tempo de incômodo, importância da sobriedade, estilo motivacional preferido e marco esperado — usados para adaptar frases e notificações ao seu perfil.</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Preferências:</strong> idioma, horário de notificação diária, tema visual da patente, contato de confiança (nome/telefone que você cadastrar), dados opcionais de economia (custo/tempo do hábito).</li>
+</ul>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Não coletamos nome completo, e-mail, localização, contatos do aparelho, câmera, microfone ou qualquer identificador de publicidade. Não usamos cookies (o Aplicativo não é uma página web).</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">3. Como os dados são armazenados e protegidos</h2>
+<ul style="margin:0 0 12px;padding-left:20px;color:rgba(244,239,233,.78);font-size:15px;">
+<li style="margin-bottom:6px;">Todos os dados ficam no armazenamento local do aparelho (AsyncStorage), <strong style="color:#F4EFE9;">nunca são enviados a um servidor</strong> — porque, nesta versão, o Aplicativo não tem backend.</li>
+<li style="margin-bottom:6px;">Diário de Gatilhos e perfil de personalização são <strong style="color:#F4EFE9;">cifrados com AES-256-GCM</strong> antes de serem salvos. A chave de criptografia é gerada no próprio aparelho e guardada no Keychain (iOS) ou Keystore (Android) via expo-secure-store — um cofre protegido pelo sistema operacional, isolado de outros aplicativos.</li>
+<li style="margin-bottom:6px;">Não usamos nenhum serviço de analytics, rastreamento de comportamento, publicidade ou relatório de erros de terceiros — o Aplicativo não faz nenhuma chamada de rede.</li>
+</ul>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">4. Com quem compartilhamos dados</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Com ninguém. Não vendemos, alugamos ou compartilhamos seus dados com terceiros, anunciantes ou parceiros, porque seus dados nunca saem do seu aparelho.</p>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">A única exceção são as lojas de aplicativos (Apple App Store / Google Play), que processam pagamentos de assinatura quando você assina o plano Pro — elas recebem apenas os dados necessários para o pagamento, conforme as políticas de privacidade da própria Apple/Google, não relacionados ao conteúdo do seu diário ou progresso.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">5. Notificações</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">O lembrete diário é agendado localmente no seu aparelho (não usamos push notification remoto, que exigiria enviar um identificador do seu aparelho para um servidor). O conteúdo da notificação (frase do dia) já vem embutido no Aplicativo.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">6. Seus direitos (LGPD)</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Como os dados vivem só no seu aparelho, você já tem controle total e imediato sobre eles, sem precisar nos pedir nada:</p>
+<ul style="margin:0 0 12px;padding-left:20px;color:rgba(244,239,233,.78);font-size:15px;">
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Acessar:</strong> todos os seus dados estão visíveis dentro das telas do próprio Aplicativo.</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Exportar:</strong> funcionalidade de exportação dos dados em JSON, disponível em Perfil &gt; Dados.</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Excluir:</strong> "Apagar todos os dados" em Perfil &gt; Dados remove permanentemente tudo — streak, XP, diário e perfil — do seu aparelho.</li>
+<li style="margin-bottom:6px;"><strong style="color:#F4EFE9;">Desinstalar</strong> o Aplicativo também remove todos os dados armazenados localmente (exceto, em alguns aparelhos Android, o backup automático do sistema operacional para a nuvem do próprio usuário, fora do nosso controle — veja a seção 8).</li>
+</ul>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Como não coletamos dados em nenhum servidor nosso, não há dados para nós corrigirmos, revogarmos consentimento ou transferirmos em seu nome — a ação já é sua, diretamente no Aplicativo.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">7. Menores de idade</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">O Aplicativo é destinado a maiores de 18 anos (ou maioridade legal local). Não coletamos intencionalmente dados de menores.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">8. Backup do sistema operacional</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Alguns aparelhos fazem backup automático de apps para a conta de nuvem do próprio usuário (iCloud no iOS, Google Drive no Android), fora do nosso controle. Se isso incluir os dados do Forja, eles ficam sujeitos às políticas de privacidade da Apple/Google, não desta. Você pode desativar esse backup específico nas configurações do seu aparelho.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">9. Alterações nesta política</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Se o Aplicativo passar a ter backend, sincronização em nuvem ou comunidade no futuro, esta política será atualizada <strong style="color:#F4EFE9;">antes</strong> da mudança entrar em vigor, com aviso destacado dentro do Aplicativo.</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">10. Não substitui tratamento clínico</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">O Forja é uma ferramenta de apoio de hábito, não um serviço de saúde. Não substitui terapia, acompanhamento psicológico ou médico. Em caso de crise, procure o CVV (188) ou emergência (192/193).</p>
+
+<h2 style="color:#F4EFE9;font-size:17px;margin:32px 0 8px;">11. Contato</h2>
+<p style="color:rgba(244,239,233,.78);font-size:15px;margin:0 0 12px;">Dúvidas sobre esta Política de Privacidade ou sobre seus dados: <a href="mailto:heyxist3r@gmail.com">heyxist3r@gmail.com</a>.</p>
+</main>
+<footer style="text-align:center;padding:24px 20px 40px;color:rgba(244,239,233,.4);font-size:12px;">FORJA — heyxist3r@gmail.com</footer>
+</div>
+
+</x-dc>
+</body>
+</html>
