@@ -24,6 +24,18 @@ input::placeholder{color:rgba(244,239,233,.4)}
 @keyframes fornalha-shimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
 @keyframes fornalha-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes fornalha-spark{0%{transform:translate(0,0);opacity:0}15%{opacity:1}85%{opacity:.5}100%{transform:translate(var(--drift,10px),-170px);opacity:0}}
+.nav-links{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.nav-toggle{display:none;background:none;border:none;padding:6px;cursor:pointer;color:#F4EFE9;align-items:center;justify-content:center;border-radius:8px}
+.nav-toggle:hover{color:#FFC46B}
+.sistema-grid{grid-template-columns:repeat(5,1fr)}
+@media (max-width:900px){.sistema-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.sistema-grid{grid-template-columns:1fr}}
+@media (max-width:760px){
+.nav-toggle{display:inline-flex}
+.nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:2px;background:rgba(13,11,9,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);padding:8px clamp(20px,5vw,64px) 20px;box-shadow:0 20px 30px -18px rgba(0,0,0,.55)}
+.nav-links.nav-links-open{display:flex}
+.nav-links a{width:100%;padding:12px 0}
+}
 </style>
 </helmet>
 
@@ -34,14 +46,19 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <img src="uploads/logo_oficial.png" alt="Fornalha" style="width:32px;height:32px;border-radius:8px;display:block;object-fit:cover;">
 <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;letter-spacing:.04em;">FORNALHA</span>
 </div>
-<div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
-<a href="#sistema" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Sistema</a>
-<a href="#personalizacao" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Personalização</a>
-<a href="#patentes" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Patentes</a>
-<a href="#privacidade" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Privacidade</a>
-<a href="#planos" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Planos</a>
+<div class="{{ navLinksClass }}">
+<a href="#sistema" onClick="{{ closeMenu }}" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Sistema</a>
+<a href="#personalizacao" onClick="{{ closeMenu }}" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Personalização</a>
+<a href="#patentes" onClick="{{ closeMenu }}" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Patentes</a>
+<a href="#privacidade" onClick="{{ closeMenu }}" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Privacidade</a>
+<a href="#planos" onClick="{{ closeMenu }}" style="color:rgba(244,239,233,.7);font-size:14px;font-weight:600;">Planos</a>
 </div>
-<a href="#alistamento" style="background:linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B);color:#211505;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;padding:10px 22px;border-radius:999px;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease;display:inline-block;" style-hover="transform:translateY(-2px) scale(1.03);box-shadow:0 8px 20px -6px rgba(255,107,43,.5);" style-active="transform:scale(.97);">Aliste-se</a>
+<div style="display:flex;align-items:center;gap:12px;">
+<a href="#alistamento" onClick="{{ closeMenu }}" style="background:linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B);color:#211505;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;padding:10px 22px;border-radius:999px;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease;display:inline-block;" style-hover="transform:translateY(-2px) scale(1.03);box-shadow:0 8px 20px -6px rgba(255,107,43,.5);" style-active="transform:scale(.97);">Aliste-se</a>
+<button type="button" class="nav-toggle" onClick="{{ toggleMenu }}" aria-label="{{ menuAriaLabel }}" aria-expanded="{{ menuExpanded }}">
+<ion-icon name="{{ menuIconName }}" style="font-size:24px;"></ion-icon>
+</button>
+</div>
 </nav>
 
 <section id="hero" style="position:relative;padding:clamp(56px,9vw,110px) clamp(20px,5vw,64px) clamp(80px,10vw,130px);">
@@ -98,13 +115,13 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0;text-wrap:pretty;">Recair não apaga sua jornada.</h2>
 </div>
 <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;">
-<div style="flex:1 1 360px;max-width:420px;background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,255,255,.16);">
+<div style="flex:1 1 360px;max-width:420px;background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:clamp(24px,5vw,36px);transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,255,255,.16);">
 <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,233,.4);margin-bottom:16px;">Streak</div>
-<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;line-height:1;color:#F4EFE9;margin-bottom:8px;">{{ streakCount }}</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,13vw,64px);line-height:1;color:#F4EFE9;margin-bottom:8px;">{{ streakCount }}</div>
 <div style="font-size:14px;color:rgba(244,239,233,.55);margin-bottom:22px;">dias sem recair</div>
 <p style="font-size:15px;line-height:1.6;color:rgba(244,239,233,.6);margin:0;">Mede sua constância agora. Reinicia a cada recaída — como deveria.</p>
 </div>
-<div style="flex:1 1 360px;max-width:420px;background:#171310;border:1px solid rgba(232,180,88,.25);border-radius:20px;padding:36px;position:relative;overflow:hidden;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(232,180,88,.5);">
+<div style="flex:1 1 360px;max-width:420px;background:#171310;border:1px solid rgba(232,180,88,.25);border-radius:20px;padding:clamp(24px,5vw,36px);position:relative;overflow:hidden;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(232,180,88,.5);">
 <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(232,180,88,.14),transparent 70%);"></div>
 <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:16px;position:relative;">XP · Patente</div>
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;position:relative;">
@@ -124,9 +141,9 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <div style="display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B458;margin-bottom:18px;"><ion-icon name="flame" style="font-size:15px;color:#FF6B2B;"></ion-icon>O sistema</div>
 <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0;text-wrap:pretty;">Um arsenal forjado para o momento em que o impulso golpeia primeiro.</h2>
 </div>
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+<div class="sistema-grid" style="display:grid;gap:20px;">
 <sc-for list="{{ features }}" as="feat" hint-placeholder-count="5">
-<div style="background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:28px;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,107,43,.3);">
+<div style="background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(20px,4vw,28px);transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,107,43,.3);">
 <ion-icon name="{{ feat.icon }}" style="font-size:30px;color:{{ feat.color }};display:block;margin-bottom:18px;"></ion-icon>
 <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;color:#F4EFE9;margin-bottom:10px;">{{ feat.title }}</div>
 <p style="font-size:14.5px;line-height:1.6;color:rgba(244,239,233,.55);margin:0;">{{ feat.desc }}</p>
@@ -276,7 +293,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
 <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
-<div style="background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:20px;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,255,255,.16);">
+<div style="background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(22px,4vw,30px);display:flex;flex-direction:column;gap:20px;transition:transform .3s ease,border-color .3s ease;" style-hover="transform:translateY(-6px);border-color:rgba(255,255,255,.16);">
 <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(244,239,233,.8);flex:1;">{{ t.quote }}</p>
 <div>
 <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14.5px;color:#F4EFE9;">{{ t.name }}</div>
@@ -304,7 +321,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </div>
 <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:stretch;">
 
-<div style="flex:1 1 380px;max-width:440px;background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;display:flex;flex-direction:column;">
+<div style="flex:1 1 380px;max-width:440px;background:#171310;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:clamp(24px,5vw,36px);display:flex;flex-direction:column;">
 <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,233,.4);margin-bottom:14px;">Fornalha</div>
 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;">
 <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;color:#F4EFE9;">R$ 0</span>
@@ -321,7 +338,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <a href="#alistamento" style="border:1px solid rgba(255,255,255,.16);color:#F4EFE9;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;padding:14px 0;border-radius:999px;text-align:center;transition:border-color .25s ease,transform .25s ease;display:block;" style-hover="border-color:rgba(255,255,255,.4);transform:translateY(-2px);" style-active="transform:scale(.98);">Começar de graça</a>
 </div>
 
-<div style="position:relative;flex:1 1 380px;max-width:440px;background:#171310;border:1px solid rgba(232,180,88,.35);border-radius:20px;padding:36px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px -24px rgba(232,180,88,.25);">
+<div style="position:relative;flex:1 1 380px;max-width:440px;background:#171310;border:1px solid rgba(232,180,88,.35);border-radius:20px;padding:clamp(24px,5vw,36px);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px -24px rgba(232,180,88,.25);">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C9330B,#FF6B2B,#FFC46B);"></div>
 <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,180,88,.16),transparent 70%);"></div>
 <div style="position:absolute;top:20px;right:20px;background:linear-gradient(135deg,#FFC46B,#E8B458);color:#211505;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;">Mais escolhido</div>
@@ -406,7 +423,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { email: '', submitted: false, revealed: {}, streakCount: 0, scrolled: false };
+  state = { email: '', submitted: false, revealed: {}, streakCount: 0, scrolled: false, mobileMenuOpen: false };
   sectionEls = {};
 
   componentDidMount() {
@@ -473,6 +490,9 @@ class Component extends DCLogic {
     };
   }
 
+  toggleMenu = () => this.setState((prev) => ({ mobileMenuOpen: !prev.mobileMenuOpen }));
+  closeMenu = () => this.setState({ mobileMenuOpen: false });
+
   handleEmailChange = (e) => this.setState({ email: e.target.value });
   handleSubmit = (e) => {
     e.preventDefault();
@@ -487,6 +507,12 @@ class Component extends DCLogic {
       handleEmailChange: this.handleEmailChange,
       handleSubmit: this.handleSubmit,
       streakCount: this.state.streakCount,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      navLinksClass: 'nav-links' + (this.state.mobileMenuOpen ? ' nav-links-open' : ''),
+      menuIconName: this.state.mobileMenuOpen ? 'close' : 'menu',
+      menuAriaLabel: this.state.mobileMenuOpen ? 'Fechar menu' : 'Abrir menu',
+      menuExpanded: this.state.mobileMenuOpen ? 'true' : 'false',
       navStyle: {
         position: 'sticky', top: 0, zIndex: 50, display: 'flex', alignItems: 'center',
         justifyContent: 'space-between', gap: '24px', padding: '16px clamp(20px,5vw,64px)',
