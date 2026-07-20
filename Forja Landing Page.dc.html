@@ -390,8 +390,11 @@ input::placeholder{color:rgba(244,239,233,.4)}
 <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
 <form onSubmit="{{ handleSubmit }}" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
 <input type="email" required="" placeholder="seu@email.com" value="{{ email }}" onChange="{{ handleEmailChange }}" style="flex:1 1 280px;max-width:340px;background:#171310;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:15px 22px;color:#F4EFE9;font-size:15px;font-family:'Manrope',sans-serif;">
-<button type="submit" style="background:linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B);color:#211505;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;padding:15px 30px;border-radius:999px;border:none;cursor:pointer;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-2px) scale(1.03);box-shadow:0 12px 26px -8px rgba(255,107,43,.5);" style-active="transform:scale(.96);">Quero ser avisado</button>
+<button type="submit" disabled="{{ submitting }}" style="{{ submitButtonStyle }}" style-hover="transform:translateY(-2px) scale(1.03);box-shadow:0 12px 26px -8px rgba(255,107,43,.5);" style-active="transform:scale(.96);">{{ submitButtonLabel }}</button>
 </form>
+<sc-if value="{{ hasSubmitError }}" hint-placeholder-val="{{ false }}">
+<p style="color:#FF6B6B;font-size:13px;margin:14px 0 0;">{{ submitError }}</p>
+</sc-if>
 </sc-if>
 
 <div style="display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
@@ -425,7 +428,7 @@ input::placeholder{color:rgba(244,239,233,.4)}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { email: '', submitted: false, revealed: {}, streakCount: 0, scrolled: false, mobileMenuOpen: false };
+  state = { email: '', submitted: false, submitting: false, submitError: '', revealed: {}, streakCount: 0, scrolled: false, mobileMenuOpen: false };
   sectionEls = {};
 
   componentDidMount() {
@@ -495,10 +498,23 @@ class Component extends DCLogic {
   toggleMenu = () => this.setState((prev) => ({ mobileMenuOpen: !prev.mobileMenuOpen }));
   closeMenu = () => this.setState({ mobileMenuOpen: false });
 
-  handleEmailChange = (e) => this.setState({ email: e.target.value });
-  handleSubmit = (e) => {
+  handleEmailChange = (e) => this.setState({ email: e.target.value, submitError: '' });
+  handleSubmit = async (e) => {
     e.preventDefault();
-    if (this.state.email && this.state.email.includes('@')) this.setState({ submitted: true });
+    const email = this.state.email.trim();
+    if (!email || !email.includes('@') || this.state.submitting) return;
+    this.setState({ submitting: true, submitError: '' });
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (!res.ok) throw new Error('request_failed');
+      this.setState({ submitted: true, submitting: false });
+    } catch (err) {
+      this.setState({ submitting: false, submitError: 'Não foi possível confirmar agora. Tente novamente em instantes.' });
+    }
   };
 
   renderVals() {
@@ -506,6 +522,17 @@ class Component extends DCLogic {
       email: this.state.email,
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
+      submitting: this.state.submitting,
+      submitError: this.state.submitError,
+      hasSubmitError: !!this.state.submitError,
+      submitButtonLabel: this.state.submitting ? 'Enviando…' : 'Quero ser avisado',
+      submitButtonStyle: {
+        background: 'linear-gradient(135deg,#FFC46B,#FF6B2B 55%,#C9330B)', color: '#211505',
+        fontFamily: "'Archivo',sans-serif", fontWeight: 700, fontSize: '15px', padding: '15px 30px',
+        borderRadius: '999px', border: 'none', cursor: this.state.submitting ? 'default' : 'pointer',
+        whiteSpace: 'nowrap', transition: 'transform .25s ease, box-shadow .25s ease',
+        opacity: this.state.submitting ? 0.6 : 1
+      },
       handleEmailChange: this.handleEmailChange,
       handleSubmit: this.handleSubmit,
       streakCount: this.state.streakCount,
